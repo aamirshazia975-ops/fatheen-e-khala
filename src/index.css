@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bauhaus Host";
+  src: local("Host Grotesk");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Bauhaus Host", "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-bauhaus-ground: #f5f4ee;
+  --color-bauhaus-ink: #000000;
+  --color-bauhaus-red: #ff0000;
+  --color-bauhaus-blue: #0000ff;
+  --color-bauhaus-yellow: #ffff00;
+  --color-bauhaus-quiet: #e8e8e8;
+  --color-bauhaus-white: #ffffff;
+}
+
+:root {
+  --dp-ground: #f5f4ee;
+  --dp-ink: #000000;
+  --dp-accent: #ff0000;
+  --dp-field: #0000ff;
+  --dp-field-support: #ffff00;
+  --dp-quiet: #e8e8e8;
+  --dp-on-field: #ffffff;
+  --dp-radius-square: 0px;
+  --dp-radius-circle: 50%;
+  --dp-font-family: "Bauhaus Host", "Host Grotesk", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: "Bauhaus Host", "Host Grotesk", sans-serif;
+    background-color: #f5f4ee;
+    color: #000000;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 2px;
+  }
+}
+
+.focus-on-dark:focus-visible {
+  outline: 3px solid #ffffff !important;
+  outline-offset: 3px !important;
+}
+
+.bauhaus-diagonal-strike {
+  background-image: linear-gradient(
+    to top left,
+    transparent calc(50% - 1.5px),
+    #000000 calc(50% - 1.5px),
+    #000000 calc(50% + 1.5px),
+    transparent calc(50% + 1.5px)
+  );
+}
